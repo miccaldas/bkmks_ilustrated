@@ -1,0 +1,299 @@
+ *, *::before, *::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+  }
+
+body {
+  background-color: ;
+  color: ;
+  min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: ;
+    color: ;
+    font-family: ;
+    margin-top: ;
+    margin-bottom: ;
+}
+
+.flex-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  align-items: ;
+}
+
+.row {
+    display: flex;
+}
+
+.footer {
+    position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-family: ;
+
+
+/* -------------------------------Header - https://codepen.io/sathishlxg/pen/JoLOYR------------------------------*/
+a, a:hover {
+  text-decoration: none;
+  font-weight: 600; }
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px;
+  background: "";
+  box-shadow: 0 0px 9px 4px rgba(0, 0, 0, 0.1), 0 -5px 2px 2px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 580px; }
+  nav .logo {
+    position: relative;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    font-size: 22px;
+    font-weight: 900;
+    color: #aa6f73;
+    text-transform: uppercase; }
+    nav .logo span {
+      display: inline-block;
+      position: relative;
+      top: -8px;
+      font-size: 13pt; }
+    nav .logo:hover {
+      color-background: #7e7e7e; }
+  nav .links {
+    float: right;
+    margin-right: 30px;
+    position: relative; }
+    nav .links li {
+      float: left;
+      list-style: none;
+      position: relative;
+      margin: 10px;
+      display: inline-block; }
+      nav .links li > a {
+        position: relative;
+        display: inline-block;
+        padding: 0 10px;
+        line-height: 30px;
+        height: 30px; }
+        nav .links li > a:hover {
+          color: #608d98;
+          background: #7e7e7e;
+          border-radius: 2px; }
+        nav .links li > a[class^="trigger-"] {
+          padding-right: 40px; }
+        nav .links li > a .arrow {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 35%;
+          text-align: center;
+          right: 10px;
+          border-width: 5px 5px 0 5px;
+          border-style: solid;
+          border-color: rgba(0, 0, 0, 0.3) transparent; }
+        nav .links li > a .arrow:after {
+            content: "";
+            border-left: 1px solid rgba(0, 0, 0, 0.15);
+            top: -10px;
+            left: -15px;
+            position: absolute;
+            height: 15px; }
+      nav .links li ul {
+        position: absolute;
+        left: 0;
+        margin: 0;
+        background: "";
+        border-radius: 2px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        display: none; }
+        nav .links li ul > li {
+          clear: both;
+          list-style: none;
+          display: block;
+          padding: 0 10px;
+          margin: 0;
+          width: 100%; }
+          nav .links li ul > li:hover {
+            background: #7e7e7e; }
+            nav .links li ul > li:hover > a {
+              background: #7e7e7e;
+              color: ""; }
+      nav .links li:hover > .drop {
+        display: block;
+        animation: fadeInRight .3s ease;
+        -webkit-animation: fadeInRight .3s ease; }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+
+/*------------------------------------ Grid Layout --------------------------------------------*/
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 100px;
+  grid-row-gap: 50px;
+  grid-auto-rows: auto;
+  grid-template-columns: 250px 250px 250px 250px;
+  padding: 10px;
+  justify-content: space-around;
+  align-content: space-evenly;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row: 1 / 1;
+    grid-area: 'lona';
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row: 1 / 1;
+    grid-area: 'Pageres';
+}
+
+.item3 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row: 1 / 1;
+    grid-area: 'Bat':
+}
+
+.item4 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row: 1 / 1;
+    grid-area: 'Orator';
+}
+
+.item5 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row: 2 / 2;
+    grid-area: 'Fire';
+}
+
+.item6 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row: 2 / 2;
+    grid-area: 'Flake8';
+}
+
+.item7 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row: 2 / 2;
+    grid-area: 'Parsel';
+}
+
+.item8 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row: 2 / 2;
+    grid-area: 'Questionary';
+}
+
+.item9 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row: 3 / 3;
+    grid-area: 'Ripgrep';
+}
+
+.item10 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row: 3 / 3;
+    grid-area: 'FuzzyWuzzy';
+}
+
+.item11 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row: 3 / 3;
+    grid-area: 'ManyBooks';
+}
+
+.item12 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row: 3 / 3;
+    grid-area: 'Cherrypy';
+}
+
+.item13 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row: 4 / 4;
+    grid-area: 'Deezer';
+}
+
+.item14 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row: 4 / 4;
+    grid-area: 'Visidata';
+}
+
+.item15 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row: 4 / 4;
+    grid-area: 'Ferret';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
