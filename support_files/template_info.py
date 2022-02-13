@@ -283,7 +283,10 @@ def load_templates():
 
     final_lst = [article_lst, base_lst, header_lst, hp_lst]
 
-    with open("template_launch.py", "a") as f:
+    if 'template_default.py' in os.listdir(cwd):
+        os.remove('template_default.py')
+
+    with open("template_default.py", "a") as f:
         f.write("import os")
         f.write("\n")
         f.write("import isort")
@@ -331,7 +334,7 @@ def load_templates():
         f.write("    for i in content:")
         f.write("\n")
 
-    with open("template_launch.py", "a") as f:
+    with open("template_default.py", "a") as f:
         for fl in final_lst:
             f.write("        env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))")  # noqa: 821
             f.write("\n")
@@ -343,10 +346,15 @@ def load_templates():
             f.write("\n")
             f.write(f"                {fl[-1]},")
             f.write("\n")
+            f.write("                    ))")
             f.write("\n")
-            f.write("             ))")
             f.write("\n")
-            f.write("\n")
+
+    with open("template_default.py", "a") as f:
+        f.write("\n")
+        f.write("if __name__ == '__main__':")
+        f.write("\n")
+        f.write("    template_launch()")
 
     """
     For some reason, there are sed commands that work in command line, and not, through python.

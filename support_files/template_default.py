@@ -26,28 +26,28 @@ def template_launch():
         template = env.get_template('article')
         with open("article", "w") as d:
             d.write(template.render(
-                description=content[i][1], link=content[i][2],
+                ['description=content[i][1]', 'link=content[i][2]'],
                      ))
 
         env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
         template = env.get_template('base')
         with open("base", "w") as d:
             d.write(template.render(
-                title=content[i][0], description=content[i][1], page_url='http://localhost/{project_name}/pages/{content[i][0]}.php', refresh=1000,
+                'title=content[i][0]', 'description=content[i][1]', 'page_url=http://localhost/{project_name}/pages/{content[i][0]}.php', 'refresh=1000',
                      ))
 
         env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
         template = env.get_template('header')
         with open("header", "w") as d:
             d.write(template.render(
-                header_title='BKMKS_ILUSTRATED', project='bkmks_ilustrated',
+                'header_title=BKMKS_ILUSTRATED', 'project=bkmks_ilustrated',
                      ))
 
         env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
         template = env.get_template('hp')
         with open("hp", "w") as d:
             d.write(template.render(
-                header_title='BKMKS_ILUSTRATED', project='bkmks_ilustrated',
+                'header_title=BKMKS_ILUSTRATED', 'project=bkmks_ilustrated',
                      ))
 
 

@@ -153,7 +153,6 @@ dmypy.json
 cython_debug/
 
 # Here so Black won't change the quotes in template_launch.py
-template_launch.py
-trans*.py
+support_files/trans*.py
 
 # End of https://www.toptal.com/developers/gitignore/api/python

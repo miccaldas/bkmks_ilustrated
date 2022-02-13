@@ -1,0 +1,2 @@
+[tool.black]
+extend-exclude = '\.\/support_files\/template_launch\.py', '\.\/support_files\/trans.*\.py'
