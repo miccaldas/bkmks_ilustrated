@@ -3,14 +3,22 @@ import subprocess
 
 import isort
 import snoop
-from jinja2 import Template, environment, filesystemloader  # noqa: f401
+from jinja2 import Environment, FileSystemLoader, Template  # noqa: f401
 from loguru import logger
+from template_info import template_info_cleaning
 
 fmt = "{time} - {name} - {level} - {message}"
-logger.add("../logs/info.log", level="info", format=fmt, backtrace=True, diagnose=True)  # noqa: e501
-logger.add("../logs/error.log", level="error", format=fmt, backtrace=True, diagnose=True)  # noqa: e501
+logger.add("../logs/info.log", level="INFO", format=fmt, backtrace=True, diagnose=True)  # noqa: e501
+logger.add("../logs/error.log", level="ERROR", format=fmt, backtrace=True, diagnose=True)  # noqa: e501
 
 subprocess.run(["isort", __file__])
+
+
+def type_watch(source, value):
+    return 'type({})'.format(source), type(value)
+
+
+snoop.install(watch_extras=[type_watch])
 
 
 @logger.catch
@@ -18,37 +26,27 @@ subprocess.run(["isort", __file__])
 def template_launch():
     """    this module launches the templates and performs the actual changes in the site"""
 
-    with open('template_records.txt', 'r') as f:
-        content = f.readlines()
+    tups = template_info_cleaning()
+    for t in tups:
+        print(t)
 
-    for i in content:
-        env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
-        template = env.get_template('article')
-        with open("article", "w") as d:
-            d.write(template.render(
-                description=content[i][1], link=content[i][2],
-                     ))
+    env = Environment(loader=FileSystemLoader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
+    template = env.get_template('article.tpl')
+    for i in range(len(tups)):
+        pag = f"/usr/share/nginx/html/bkmks_ilustrated/pages/{tups[i][0]}.php"
+        with open(pag, 'w') as d:
+            d.write(template.render(title=f'{tups[i][0]}', description=f'{tups[i][1]}', link=f'{tups[i][2]}'))
 
-        env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
-        template = env.get_template('base')
-        with open("base", "w") as d:
-            d.write(template.render(
-                title=content[i][0], description=content[i][1], page_url='http://localhost/{project_name}/pages/{content[i][0]}.php', refresh=1000,
-                     ))
+    env = Environment(loader=FileSystemLoader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
+    template = env.get_template('header.tpl')
+    with open("/usr/share/nginx/html/bkmks_ilustrated/partials/header.php", "w") as d:
+        d.write(template.render(
+            header_title='BKMKS_ILUSTRATED', project='bkmks_ilustrated',))
 
-        env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
-        template = env.get_template('header')
-        with open("header", "w") as d:
-            d.write(template.render(
-                header_title='BKMKS_ILUSTRATED', project='bkmks_ilustrated',
-                     ))
-
-        env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
-        template = env.get_template('hp')
-        with open("hp", "w") as d:
-            d.write(template.render(
-                header_title='BKMKS_ILUSTRATED', project='bkmks_ilustrated',
-                     ))
+    env = Environment(loader=FileSystemLoader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))
+    template = env.get_template('hp.tpl')
+    with open("/usr/share/nginx/html/bkmks_ilustrated/index.php", "w") as d:
+        d.write(template.render(header_title='BKMKS_ILUSTRATED', project='bkmks_ilustrated',))
 
 
 if __name__ == '__main__':

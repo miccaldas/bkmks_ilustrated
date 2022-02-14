@@ -3,7 +3,7 @@
         <div id="content_wrap" class="pb3">
             <div id="top-spacer" class="h4 mt0.5 mb4">
 <nav id="navigation">
-  <a href="http://localhost/bkmks_ilustrated/index.php" class="logo">BOOKMARKS ILUSTRATED<span>+<span></a>
+  <a href="http://localhost/bkmks_ilustrated/index.php" class="logo">BKMKS_ILUSTRATED<span>+<span></a>
   <ul class="links">
 </nav>
 </div>

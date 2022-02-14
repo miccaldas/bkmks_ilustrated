@@ -124,49 +124,49 @@ nav {
             <div id='content'>
     <div class="grid-container">
     <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Textual.png" alt="alt_small_Textual.png">
+   <img src="support_files/screenshots/small_sizes/small_AutoExpect.png" alt="alt_small_AutoExpect.png">
     </div>
     <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Deezer.png" alt="alt_small_Deezer.png">
+   <img src="support_files/screenshots/small_sizes/small_Sqlitebiter.png" alt="alt_small_Sqlitebiter.png">
     </div>
     <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_CliFlix.png" alt="alt_small_CliFlix.png">
+   <img src="support_files/screenshots/small_sizes/small_EverSQL.png" alt="alt_small_EverSQL.png">
     </div>
     <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Flake8.png" alt="alt_small_Flake8.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_txt2html.png" alt="alt_small_txt2html.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Pytermgui.png" alt="alt_small_Pytermgui.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Ls-colors.png" alt="alt_small_Ls-colors.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Clipmenu.png" alt="alt_small_Clipmenu.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Transformer.png" alt="alt_small_Transformer.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/hp_info_file" alt="alt_hp_info_file">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Parsel.png" alt="alt_small_Parsel.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Questionnaire.png" alt="alt_small_Questionnaire.png">
-    </div>
-    <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_Black.png" alt="alt_small_Black.png">
+   <img src="support_files/screenshots/small_sizes/small_Orator.png" alt="alt_small_Orator.png">
     </div>
     <div class="grid-item">
    <img src="support_files/screenshots/small_sizes/small_Upskill.png" alt="alt_small_Upskill.png">
     </div>
     <div class="grid-item">
-   <img src="support_files/screenshots/small_sizes/small_sass-lang.com-1366x768.png" alt="alt_small_sass-lang.com-1366x768.png">
+   <img src="support_files/screenshots/small_sizes/small_Rich.png" alt="alt_small_Rich.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_Artvee.png" alt="alt_small_Artvee.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_Parsel.png" alt="alt_small_Parsel.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_Cherrypy.png" alt="alt_small_Cherrypy.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_txt2html.png" alt="alt_small_txt2html.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_Pyenv.png" alt="alt_small_Pyenv.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_Questionary.png" alt="alt_small_Questionary.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_Ripgrep.png" alt="alt_small_Ripgrep.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_FuzzyWuzzy.png" alt="alt_small_FuzzyWuzzy.png">
+    </div>
+    <div class="grid-item">
+   <img src="support_files/screenshots/small_sizes/small_Selenium.png" alt="alt_small_Selenium.png">
     </div>
 </div>
 
@@ -174,6 +174,9 @@ nav {
         <div id="col3" class="flex-row items-center self-center justify-center content-center w-10 order-2"></div>
 <?php include '/usr/share/nginx/html/support_services/partials/footer.php'; ?>
 </div>
+  <script src="/new_rss/support_files/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="/new_rss/support_files/js/plugins.js"></script>
+  <script src="/new_rss/support_files/js/main.js"></script>
 </body>
 </html>
 

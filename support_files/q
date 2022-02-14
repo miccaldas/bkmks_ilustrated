@@ -1,0 +1,16 @@
+[0;1;31m×[0m git_automate.service - Updates all git repositories
+     Loaded: loaded (]8;;file://micaldas-host/etc/systemd/system/git_automate.service/etc/systemd/system/git_automate.service]8;;; disabled; vendor preset: disabled)
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Mon 2022-02-14 21:16:14 WET; 22s ago
+    Process: 233855 ExecStart=/usr/bin/git_automate/main.py [0;1;31m(code=exited, status=1/FAILURE)[0m
+        CPU: 270ms
+
+Feb 14 21:16:14 micaldas-host main.py[233856]:   warn(f"Unable to parse file {file_name} due to {error}")
+Feb 14 21:16:14 micaldas-host main.py[233857]: /home/mic/.local/lib/python3.10/site-packages/isort/main.py:104: UserWarning: Unable to parse file /usr/bin/git_automate/main.py due to [Errno 13] Permission denied: '/usr/bin/git_automate/main.py.isorted'
+Feb 14 21:16:14 micaldas-host main.py[233857]:   warn(f"Unable to parse file {file_name} due to {error}")
+Feb 14 21:16:14 micaldas-host main.py[233855]: Traceback (most recent call last):
+Feb 14 21:16:14 micaldas-host main.py[233855]:   File "/usr/bin/git_automate/main.py", line 19, in <module>
+Feb 14 21:16:14 micaldas-host main.py[233855]:     @logger.catch
+Feb 14 21:16:14 micaldas-host main.py[233855]: NameError: name 'logger' is not defined
+Feb 14 21:16:14 micaldas-host systemd[1]: [0;1;39m[0;1;31m[0;1;39mgit_automate.service: Control process exited, code=exited, status=1/FAILURE[0m
+Feb 14 21:16:14 micaldas-host systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mgit_automate.service: Failed with result 'exit-code'.[0m
+Feb 14 21:16:14 micaldas-host systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Updates all git repositories.[0m

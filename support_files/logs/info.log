@@ -1,0 +1,36 @@
+2022-02-14T12:26:34.001632+0000 - __main__ - ERROR - An error has been caught in function 'BkmksContent', process 'MainProcess' (207981), thread 'MainThread' (140713222911808):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/bkmks_ilustrated/support_files/alternative/ilustratedbkmks.py", line 30, in <module>
+    class BkmksContent:
+
+> File "/usr/share/nginx/html/bkmks_ilustrated/support_files/alternative/ilustratedbkmks.py", line 50, in BkmksContent
+    download_db()
+    └ <function BkmksContent.download_db at 0x7ffa579e2a70>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 157, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function BkmksContent.download_db at 0x7ffa579e2950>
+
+TypeError: BkmksContent.download_db() missing 1 required positional argument: 'self'
+2022-02-14T15:08:48.475283+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (213638), thread 'MainThread' (140468641060672):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/bkmks_ilustrated/support_files/alternative/ilustratedbkmks.py", line 115, in <module>
+    bc.tag_values()
+    │  └ <function BkmksContent.tag_values at 0x7fc1653de7a0>
+    └ <__main__.BkmksContent object at 0x7fc1653a3940>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 157, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.BkmksContent object at 0x7fc1653a3940>,)
+           └ <function BkmksContent.tag_values at 0x7fc1653de680>
+
+  File "/usr/share/nginx/html/bkmks_ilustrated/support_files/alternative/ilustratedbkmks.py", line 104, in tag_values
+    srt = sorted(self.loflsts)
+                 └ <__main__.BkmksContent object at 0x7fc1653a3940>
+
+AttributeError: 'BkmksContent' object has no attribute 'loflsts'

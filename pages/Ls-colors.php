@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <title>Ls-colors</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Mclds">
-    <meta name="description" content="modified ls that print icons">
-    <meta property="og:type" content="web page">
-    <meta property="og:url" content="">
-    <link rel="stylesheet" type="text/css" href="http://localhost/bkmks_ilustrated/css/tachyons.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="http://localhost/bkmks_ilustrated/css/index.css" media="screen">
-    <meta http-equiv="refresh" content="">
-    <style>
+<head>
+  <title>Ls-colors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mclds">
+  <meta name="description" content="modified ls that print icons">
+  <meta property="og:type" content="web page">
+  <meta property="og:url" content="">
+  <link rel="stylesheet" type="text/css" href="http://localhost//css/tachyons.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="http://localhost//css/index.css" media="screen">
+  <meta http-equiv="refresh" content="">
+  <style>
         a, a:hover {
   text-decoration: none;
   font-weight: 600; }
 
-nav {
+  nav {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   height: 50px;
-  background: "";
+  background: #f4f4f4;
   box-shadow: 0 0px 9px 4px rgba(0, 0, 0, 0.1), 0 -5px 2px 2px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   min-width: 580px; }
@@ -86,7 +86,7 @@ nav {
         position: absolute;
         left: 0;
         margin: 0;
-        background: "";
+        background: #f4f4f4;
         border-radius: 2px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
         display: none; }
@@ -106,32 +106,35 @@ nav {
         display: block;
         animation: fadeInRight .3s ease;
         -webkit-animation: fadeInRight .3s ease; }
-
-@keyframes fadeInRight {
+  @keyframes fadeInRight {
   0% {
     opacity: 0;
     transform: translate3d(100%, 0, 0); }
   100% {
     opacity: 1;
     transform: none; } }
-
-    </style>
-    </head>
-    <?php include '/usr/share/nginx/html/bkmks_ilustrated/partials/header.php'; ?>
-      <div id="flex-container" class="flex mt=2 mb=2">
-        <div id="col1" class="flex-row items-center self-center justify-center content-center w-10 order-0"></div>
-        <div id="col2" class="flex-row items-center self-center justify-center content-center w-80 order-1">
-            <div id='content'>
-<img src="screenshots/Ls-colors.png" class="center" alt="new_Ls-colors">
-<br>
-<h1 class="f-6 lh-solid gray bold center">Ls-colors</h1>
-<h3 class="f-4 ml7 ph7 bold silver center f-subheadline lh-title">modified ls that print icons</h3><br><br>
-<a href="https://tinyurl.com/ybboeh4e" class="f1 lh-title washed-red fw6 ml5 ph7 db black link hover-dark-red">LINK</a>
-
-        </div>
+  </style>
+</head>
+<body>
+<?php include '/usr/share/nginx/html/bkmks_ilustrated/partials/header.php'; ?>
+  <div id="flex-container" class="flex mt=2 mb=2" style="padding-top:20px">
+    <div id="col1" class="flex-row items-center self-center justify-center content-center w-10 order-0"></div>
+    <div id="col2" class="w-80 order-1" style="display:flex;justify-content:center;align-items:center">>
+      <div id='content'> 
+        <img src="screenshots/Ls-colors.png" class="" alt="new_Ls-colors" style="margin:auto">
+        <br>
+        <br>
+        <h1 class="f-6-ns lh-solid gray bold lh-title" style="margin:0 auto;position:relative;top:50px;margin-bottom:70px">Ls-colors</h1>
+        <h3 class="f-5-ns bold silver f-subheadline measure lh-title" style="margin:0 auto; position:relative;left:80px;top:30px;margin-bottom:40px">modified ls that print icons</h3>
+        <br>
+        <a href="https://tinyurl.com/ybboeh4e" class="f2 i mid-gray black link hover-dark-red" style="position:relative;left:350px">LINK</a>
         <div id="col3" class="flex-row items-center self-center justify-center content-center w-10 order-2"></div>
-<?php include '/usr/share/nginx/html/support_services/partials/footer.php'; ?>
-</div>
-</body>
+    </div>
+      </div>
+      <?php include '/usr/share/nginx/html/support_services/partials/footer.php'; ?>
+ </div>
+    <script src="/new_rss/support_files/js/vendor/modernizr-3.11.2.min.js"></script> 
+    <script src="/new_rss/support_files/js/plugins.js"></script> 
+    <script src="/new_rss/support_files/js/main.js"></script>
+ </body>
 </html>
-

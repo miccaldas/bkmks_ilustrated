@@ -24,6 +24,13 @@ logger.add("../logs/error.log", level="ERROR", format=fmt, backtrace=True, diagn
 subprocess.run(["isort", __file__])
 
 
+def type_watch(source, value):
+    return 'type({})'.format(source), type(value)
+
+
+snoop.install(watch_extras=[type_watch])
+
+
 @logger.catch
 @snoop
 def run_hp_template():
@@ -232,12 +239,6 @@ def load_templates():
 
     cwd = os.getcwd()
 
-    template_files = []
-    mic = ["article", "base", "header", "hp"]
-    for mi in mic:
-        f"{mi}.tpl"
-        template_files.append(mi)
-
     nulls = [idx for idx, val in enumerate(data) if val == ""]
 
     article_lst = []
@@ -271,7 +272,6 @@ def load_templates():
         header_lst.append(headertags[1:-1])
 
     for i in range((nulls[2]) + 1, len(data)):
-        hp_lst.append(template_files[3])
         hp_lst.append(data[i])
     for i in range((nulls[2]) + 2, len(data)):
         hp_tags.append(data[i])
@@ -279,6 +279,7 @@ def load_templates():
         hp_lst.append(hptags[1:-1])
 
     final_lst = [article_lst, base_lst, header_lst, hp_lst]
+    print(final_lst)
 
     if 'template_default.py' in os.listdir(cwd):
         os.remove('template_default.py')
@@ -292,16 +293,16 @@ def load_templates():
         f.write("\n")
         f.write("import snoop")
         f.write("\n")
-        f.write("from jinja2 import environment, filesystemloader, Template  # noqa: f401")
+        f.write("from jinja2 import Environment, FileSystemLoader, Template  # noqa: f401")
         f.write("\n")
         f.write("from loguru import logger")
         f.write("\n")
         f.write("\n")
         f.write('fmt = "{time} - {name} - {level} - {message}"')
         f.write("\n")
-        f.write('logger.add("../logs/info.log", level="info", format=fmt, backtrace=True, diagnose=True)  # noqa: e501')
+        f.write('logger.add("../logs/info.log", level="INFO", format=fmt, backtrace=True, diagnose=True)  # noqa: e501')
         f.write("\n")
-        f.write('logger.add("../logs/error.log", level="error", format=fmt, backtrace=True, diagnose=True)  # noqa: e501')
+        f.write('logger.add("../logs/error.log", level="ERROR", format=fmt, backtrace=True, diagnose=True)  # noqa: e501')
         f.write("\n")
         f.write("\n")
         f.write('subprocess.run(["isort", __file__])')
@@ -323,26 +324,28 @@ def load_templates():
         f.write('"')  # noqa: e202
         f.write("\n")
         f.write("\n")
-        f.write("    with open('template_records.txt', 'r') as f:")
+        f.write("    tups = template_info_cleaning()")
         f.write("\n")
-        f.write("        content = f.readlines()")
+        f.write("    for t in tups:")
         f.write("\n")
+        f.write("        print(t)")
         f.write("\n")
-        f.write("    for i in content:")
         f.write("\n")
 
     with open("template_default.py", "a") as f:
         for fl in final_lst:
-            f.write("        env = environment(loader=filesystemloader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))")  # noqa: 821
+            f.write("    env = Environment(loader=FileSystemLoader('/usr/share/nginx/html/bkmks_ilustrated/support_files/templates/'))")  # noqa: 821
             f.write("\n")
-            f.write(f"        template = env.get_template('{fl[0]}')")
+            f.write("   template = env.get_template(f'{fl[0]}')")
             f.write("\n")
-            f.write(f'        with open("{fl[0]}", "w") as d:')
+            f.write("    for i in range(len(tups)):")
+            f.write("\n")
+            f.write("        pag = f'/usr/share/nginx/html/bkmks_ilustrated/pages/{tups[i][0]}.php'")
+            f.write("\n")
+            f.write('   with open(f"{pag}", "w") as d:')
             f.write("\n")
             f.write("            d.write(template.render(")
-            f.write("\n")
-            f.write(f"                {fl[-1]},")
-            f.write("\n")
+            f.write("                fl[-1],")
             f.write("                    ))")
             f.write("\n")
             f.write("\n")
@@ -354,7 +357,7 @@ def load_templates():
         f.write("    template_launch()")
 
     """
-    For some reason, there are sed commands that work in command line, and not, through python.
+    For some reason, there are sed commands that work in command line, and not through python.
     As there will be a lot of them, I created a bash script called 'sed_scripts.sh', in this
     very folder, and it will execute them sequentially.
     """
