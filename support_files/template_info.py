@@ -11,7 +11,6 @@ import trace
 
 import isort  # noqa: F401
 import snoop
-from birdseye import eye
 from jinja2 import Environment, FileSystemLoader, Template  # noqa: F401
 from loguru import logger
 from making_hp_template import making_hp_template
@@ -37,8 +36,12 @@ def run_hp_template():
     making_hp_template()
 
 
+if __name__ == '__main___':
+    run_hp_template()
+
+
 @logger.catch
-# @snoop
+@snoop
 def template_info():
     """Iterating through the titles that have a image, we build a
     list of db information relating only to the entries that we
@@ -193,15 +196,9 @@ def template_ordering():
                     valbox = []
             for n in null:
                 rng = range(d < n)
-                # print(f"rng is {rng}")
-                # print(f"rng type is {type(rng)}")
                 lenr = len(rng)
                 lenr = str(rng)
-                # print(f"lenr is {lenr}")
-                # print(f"Lenr type is {type(lenr)}")
                 rg = (n, val)
-                # print(f"rg is {rg}")
-                # print(type(f" rg type is {rg}"))
                 valbox.append(str(rg))
 
     mic = ["article", "base", "header", "hp"]

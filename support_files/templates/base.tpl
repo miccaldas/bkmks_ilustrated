@@ -127,6 +127,9 @@ nav {
         <div id="col3" class="flex-row items-center self-center justify-center content-center w-10 order-2"></div>
 <?php include '/usr/share/nginx/html/support_services/partials/footer.php'; ?>
 </div>
+  <script src="/new_rss/support_files/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="/new_rss/support_files/js/plugins.js"></script>
+  <script src="/new_rss/support_files/js/main.js"></script>
 </body>
 </html>
 
